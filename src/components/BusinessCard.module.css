@@ -1,0 +1,113 @@
+.card {
+  @apply bg-gradient-to-br from-gray-900 to-gray-800 p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl;
+  @apply w-full max-w-3xl mx-auto;
+  @apply transition-all duration-300 ease-in-out;
+  @apply hover:shadow-[0_0_30px_rgba(0,0,0,0.3)];
+  @apply relative;
+}
+
+.header {
+  @apply text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6 md:mb-8 tracking-wider text-center md:text-left;
+  @apply border-b border-gray-700 pb-4;
+}
+
+.content {
+  @apply flex flex-col md:flex-row gap-4 sm:gap-6 md:gap-8;
+  margin-bottom: 10px;
+}
+
+.photoSection {
+  @apply flex flex-col items-center md:items-start;
+  @apply w-full md:w-auto;
+}
+
+.qrCodeContainer {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.qrButton {
+  margin-bottom: 16px;
+  padding: 8px 16px;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease;
+}
+
+.qrButton:hover {
+  background-color: #6a6a6a;
+}
+
+.photo {
+  @apply w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-xl object-cover;
+  @apply ring-4 ring-gray-700 ring-offset-2 ring-offset-gray-800;
+}
+
+.name {
+  @apply text-lg sm:text-xl font-semibold text-white mt-3 sm:mt-4;
+  @apply text-center md:text-left;
+}
+
+.info {
+  @apply flex-grow space-y-3 sm:space-y-4;
+  @apply mt-4 md:mt-0;
+  @apply relative;
+}
+
+.infoItem {
+  @apply flex items-center gap-3 text-gray-300;
+  @apply text-sm sm:text-base;
+  @apply justify-center md:justify-start;
+}
+
+.icon {
+  @apply text-gray-500;
+  @apply w-4 h-4 sm:w-5 sm:h-5;
+}
+
+.topButtons {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 1rem;
+  z-index: 10;
+}
+
+.actionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #4a4a4a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s ease;
+}
+
+.actionButton:hover {
+  background-color: #6a6a6a;
+}
+
+.requestButton {
+  background-color: #0070f3;
+}
+
+.requestButton:hover {
+  background-color: #005bb5;
+}
+
+@media (max-width: 640px) {
+  .topButtons {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
