@@ -13,15 +13,72 @@ interface BusinessCardProps {
 
 const transliterate = (text: string): string => {
   const transliterationMap: { [key: string]: string } = {
-    А: "A", Б: "B", В: "V", Г: "G", Д: "D", Е: "E", Ё: "Yo", Ж: "Zh",
-    З: "Z", И: "I", Й: "Y", К: "K", Л: "L", М: "M", Н: "N", О: "O",
-    П: "P", Р: "R", С: "S", Т: "T", У: "U", Ф: "F", Х: "Kh", Ц: "Ts",
-    Ч: "Ch", Ш: "Sh", Щ: "Shch", Ъ: "", Ы: "Y", Ь: "", Э: "E", Ю: "Yu",
-    Я: "Ya", а: "a", б: "b", в: "v", г: "g", д: "d", е: "e", ё: "yo",
-    ж: "zh", з: "z", и: "i", й: "y", к: "k", л: "l", м: "m", н: "n",
-    о: "o", п: "p", р: "r", с: "s", т: "t", у: "u", ф: "f", х: "kh",
-    ц: "ts", ч: "ch", ш: "sh", щ: "shch", ъ: "", ы: "y", ь: "", э: "e",
-    ю: "yu", я: "ya",
+    А: "A",
+    Б: "B",
+    В: "V",
+    Г: "G",
+    Д: "D",
+    Е: "E",
+    Ё: "Yo",
+    Ж: "Zh",
+    З: "Z",
+    И: "I",
+    Й: "Y",
+    К: "K",
+    Л: "L",
+    М: "M",
+    Н: "N",
+    О: "O",
+    П: "P",
+    Р: "R",
+    С: "S",
+    Т: "T",
+    У: "U",
+    Ф: "F",
+    Х: "Kh",
+    Ц: "Ts",
+    Ч: "Ch",
+    Ш: "Sh",
+    Щ: "Shch",
+    Ъ: "",
+    Ы: "Y",
+    Ь: "",
+    Э: "E",
+    Ю: "Yu",
+    Я: "Ya",
+    а: "a",
+    б: "b",
+    в: "v",
+    г: "g",
+    д: "d",
+    е: "e",
+    ё: "yo",
+    ж: "zh",
+    з: "z",
+    и: "i",
+    й: "y",
+    к: "k",
+    л: "l",
+    м: "m",
+    н: "n",
+    о: "o",
+    п: "p",
+    р: "r",
+    с: "s",
+    т: "t",
+    у: "u",
+    ф: "f",
+    х: "kh",
+    ц: "ts",
+    ч: "ch",
+    ш: "sh",
+    щ: "shch",
+    ъ: "",
+    ы: "y",
+    ь: "",
+    э: "e",
+    ю: "yu",
+    я: "ya",
   };
 
   return text
@@ -30,10 +87,10 @@ const transliterate = (text: string): string => {
     .join("");
 };
 
-export const BusinessCard: React.FC<BusinessCardProps> = ({ 
-  user, 
-  showRequestModal, 
-  setShowRequestModal 
+export const BusinessCard: React.FC<BusinessCardProps> = ({
+  user,
+  showRequestModal,
+  setShowRequestModal,
 }) => {
   const [formData, setFormData] = useState({ name: "", phone: "" });
   const [showQRCode, setShowQRCode] = useState(false);
@@ -96,7 +153,7 @@ END:VCARD`;
 
         {showQRCode && (
           <div className={styles.qrCodeContainer}>
-            <QRCode value={vCard} size={128} />
+            <QRCode value={vCard} size={256} />
           </div>
         )}
       </div>
