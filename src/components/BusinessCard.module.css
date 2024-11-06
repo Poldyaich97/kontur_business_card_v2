@@ -4,7 +4,7 @@
   @apply transition-all duration-300 ease-in-out;
   @apply hover:shadow-[0_0_30px_rgba(0,0,0,0.3)];
   @apply relative;
-  @apply pt-16; /* Отступ сверху для мобильных экранов */
+  @apply pt-16;
   margin-top: 50px;
 }
 
@@ -29,20 +29,15 @@
   justify-content: center;
 
   @media (max-width: 640px) {
-    margin-top: 60px; /* Отступ под закрепленную верхнюю панель на мобильных экранах */
+    margin-top: 60px;
   }
 }
 
 .qrButton {
-  margin-bottom: 16px;
-  padding: 8px 16px;
-  background-color: #4a4a4a;
-  color: white;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
+  @apply mb-4 py-2 px-4 bg-gray-600 text-white rounded-lg cursor-pointer;
+  @apply transition-colors duration-200;
   font-size: 14px;
-  transition: background-color 0.2s ease;
+  margin-right: 10px;
 }
 
 .qrButton:hover {
@@ -97,8 +92,8 @@
   cursor: pointer;
   font-size: 0.875rem;
   transition: background-color 0.2s ease;
-  text-align: center; /* Центровка текста */
-  justify-content: center; /* Центровка иконки и текста */
+  text-align: center;
+  justify-content: center;
 }
 
 .actionButton:hover {
@@ -113,28 +108,32 @@
   background-color: #005bb5;
 }
 
+/* Мобильные стили для закрепленной верхней панели */
 @media (max-width: 640px) {
   .topButtons {
-    position: fixed; /* Закрепление панели на мобильных */
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 50;
-    background-color: rgba(
-      15,
-      15,
-      15,
-      0.95
-    ); /* Полупрозрачный фон для видимости */
+    background-color: rgba(15, 15, 15, 0.95);
     padding: 8px;
     justify-content: center;
-    gap: 0.5rem; /* Меньший отступ между кнопками */
-    flex-direction: column; /* Вертикальная ориентация на мобильных */
+    gap: 8px; /* Добавлен больший отступ между кнопками */
+    flex-direction: column;
   }
 
   .actionButton,
   .requestButton {
-    width: 100%; /* Полная ширина кнопок на мобильных */
-    text-align: center; /* Центровка текста внутри кнопок */
+    width: 100%;
+    text-align: center;
   }
+}
+
+/* Добавляем дополнительные стили для лучшего UX */
+button:focus,
+.qrButton:focus,
+.actionButton:focus,
+.requestButton:focus {
+  @apply outline-none ring-2 ring-offset-2 ring-blue-500;
 }

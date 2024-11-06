@@ -107,6 +107,24 @@ export const BusinessCard: React.FC<BusinessCardProps> = ({
     setFormData({ name: "", phone: "" });
   };
 
+  const downloadVCard = () => {
+    const vCardContent = `BEGIN:VCARD
+VERSION:3.0
+N:${transliterate(user.name.replace(/, /g, ";"))}
+FN:${transliterate(user.name)}
+TEL;TYPE=CELL:${user.phone}
+EMAIL:${user.email}
+END:VCARD`;
+    const blob = new Blob([vCardContent], { type: "text/vcard" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = `${user.name}.vcf`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  // Создаем vCard как строку для передачи в QRCode
   const vCard = `BEGIN:VCARD
 VERSION:3.0
 N:${transliterate(user.name.replace(/, /g, ";"))}
@@ -144,12 +162,18 @@ END:VCARD`;
           </div>
         </div>
 
-        <button
-          onClick={() => setShowQRCode(!showQRCode)}
-          className={styles.qrButton}
-        >
-          {showQRCode ? "Скрыть QR" : "Показать QR"}
-        </button>
+        <div className={styles.buttonContainer}>
+          <button
+            onClick={() => setShowQRCode(!showQRCode)}
+            className={styles.qrButton}
+          >
+            {showQRCode ? "Скрыть QR" : "Показать QR"}
+          </button>
+
+          <button onClick={downloadVCard} className={styles.qrButton}>
+            Добавить в контакты
+          </button>
+        </div>
 
         {showQRCode && (
           <div className={styles.qrCodeContainer}>
