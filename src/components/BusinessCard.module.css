@@ -4,6 +4,8 @@
   @apply transition-all duration-300 ease-in-out;
   @apply hover:shadow-[0_0_30px_rgba(0,0,0,0.3)];
   @apply relative;
+  @apply pt-16; /* Отступ сверху для мобильных экранов */
+  margin-top: 50px;
 }
 
 .header {
@@ -25,6 +27,10 @@
   margin-top: 16px;
   display: flex;
   justify-content: center;
+
+  @media (max-width: 640px) {
+    margin-top: 60px; /* Отступ под закрепленную верхнюю панель на мобильных экранах */
+  }
 }
 
 .qrButton {
@@ -91,6 +97,8 @@
   cursor: pointer;
   font-size: 0.875rem;
   transition: background-color 0.2s ease;
+  text-align: center; /* Центровка текста */
+  justify-content: center; /* Центровка иконки и текста */
 }
 
 .actionButton:hover {
@@ -107,7 +115,26 @@
 
 @media (max-width: 640px) {
   .topButtons {
-    flex-direction: column;
-    gap: 0.5rem;
+    position: fixed; /* Закрепление панели на мобильных */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background-color: rgba(
+      15,
+      15,
+      15,
+      0.95
+    ); /* Полупрозрачный фон для видимости */
+    padding: 8px;
+    justify-content: center;
+    gap: 0.5rem; /* Меньший отступ между кнопками */
+    flex-direction: column; /* Вертикальная ориентация на мобильных */
+  }
+
+  .actionButton,
+  .requestButton {
+    width: 100%; /* Полная ширина кнопок на мобильных */
+    text-align: center; /* Центровка текста внутри кнопок */
   }
 }
