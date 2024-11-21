@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { User } from "../data/users";
-import { Phone, Mail, Briefcase, X, MessageCircle } from "lucide-react";
+import { Phone, Mail, Briefcase, X, MessageCircle } from "lucide-react"; // Добавляем MessageCircle
 import { useCardRequests } from "../context/CardRequestContext";
-import QRCode from "react-qr-code";
 import styles from "./BusinessCard.module.css";
 
 interface BusinessCardProps {
@@ -13,7 +12,7 @@ interface BusinessCardProps {
 
 const transliterate = (text: string): string => {
   const transliterationMap: { [key: string]: string } = {
-    // Карта транслитерации остается без изменений
+    // (карта транслитерации остается без изменений)
   };
 
   return text
@@ -59,14 +58,6 @@ END:VCARD`;
     URL.revokeObjectURL(url);
   };
 
-  const vCard = `BEGIN:VCARD
-VERSION:3.0
-N:${transliterate(user.name.replace(/, /g, ";"))}
-FN:${transliterate(user.name)}
-TEL;TYPE=CELL:${user.phone}
-EMAIL:${user.email}
-END:VCARD`;
-
   return (
     <>
       <div className={styles.card}>
@@ -98,15 +89,17 @@ END:VCARD`;
 
         <div className={styles.buttonContainer}>
           <button
-            onClick={() =>
-              window.open(`https://t.me/${user.telegramUsername}`, "_blank")
-            }
-            className={`${styles.qrButton} ${styles.messengerButton}`}
+            onClick={() => setShowQRCode(!showQRCode)}
+            className={styles.qrButton}
           >
-            <MessageCircle size={16} className={styles.icon} />
-            Написать в Telegram
+            {showQRCode ? "Скрыть QR" : "Показать QR"}
           </button>
 
+          <button onClick={downloadVCard} className={styles.qrButton}>
+            Добавить в контакты
+          </button>
+
+          {/* Кнопки для WhatsApp и Telegram */}
           <button
             onClick={() =>
               window.open(
@@ -120,21 +113,21 @@ END:VCARD`;
             Написать в WhatsApp
           </button>
 
-          <button onClick={downloadVCard} className={styles.qrButton}>
-            Добавить в контакты
-          </button>
-
           <button
-            onClick={() => setShowQRCode(!showQRCode)}
-            className={styles.qrButton}
+            onClick={() =>
+              window.open(`https://t.me/${user.telegramUsername}`, "_blank")
+            }
+            className={`${styles.qrButton} ${styles.messengerButton}`}
           >
-            {showQRCode ? "Скрыть QR" : "Показать QR"}
+            <MessageCircle size={16} className={styles.icon} />
+            Написать в Telegram
           </button>
         </div>
 
-        {showQRCode && (
+        {/* Используем уже готовый QR-код */}
+        {showQRCode && user.qr && (
           <div className={styles.qrCodeContainer}>
-            <QRCode value={vCard} size={256} />
+            <img src={user.qr} alt="QR Code" className={styles.qrImage} />
           </div>
         )}
       </div>
