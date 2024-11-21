@@ -23,7 +23,7 @@ export const users: User[] = [
   {
     id: 2,
     name: "Русаков Дмитрий Александрович",
-    position: "Русаков Дмитрий Александрович",
+    position: "Руководитель отдела",
     phone: "+7 (909) 003-22-76",
     email: "rusakov_da@skbkontur.ru",
     photo: "https://github.com/Poldyaich97/kontur_business_card/blob/main/src/data/2.png?raw=true",
@@ -32,7 +32,7 @@ export const users: User[] = [
   {
     id: 3,
     name: "Воробьев Дмитрий Александрович",
-    position: "Воробьев Дмитрий Александрович",
+    position: "Руководитель управления",
     phone: "+7 (965) 546-44-64",
     email: "vord@skbkontur.ru",
     photo: "https://github.com/Poldyaich97/kontur_business_card_v2/blob/main/src/data/id3.jpg?raw=true",
@@ -41,7 +41,7 @@ export const users: User[] = [
   }, {
     id: 4,
     name: "Милюкова Жанна Витальевна",
-    position: "Милюкова Жанна Витальевна",
+    position: "Заместитель руководителя управления по общим вопросам",
     phone: "+7 (912) 219-94-39",
     email: "jmilukova@skbkontur.ru",
     photo: "https://github.com/Poldyaich97/kontur_business_card_v2/blob/main/src/data/id4.jpg?raw=true",
