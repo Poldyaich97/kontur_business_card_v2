@@ -35,7 +35,7 @@ export const users: User[] = [
     position: "Воробьев Дмитрий Александрович",
     phone: "+7 (965) 546-44-64",
     email: "vord@skbkontur.ru",
-    photo: "https://github.com/Poldyaich97/kontur_business_card/blob/main/src/data/2.png?raw=true",
+    photo: "https://github.com/Poldyaich97/kontur_business_card_v2/blob/main/src/data/id3.jpg?raw=true",
     qr: "https://github.com/Poldyaich97/kontur_business_card/blob/main/src/data/qr2.png?raw=true",
     telegramUsername: "fader07"
   }, {
@@ -44,7 +44,7 @@ export const users: User[] = [
     position: "Милюкова Жанна Витальевна",
     phone: "+7 (912) 219-94-39",
     email: "jmilukova@skbkontur.ru",
-    photo: "https://github.com/Poldyaich97/kontur_business_card/blob/main/src/data/2.png?raw=true",
+    photo: "https://github.com/Poldyaich97/kontur_business_card_v2/blob/main/src/data/id4.jpg?raw=true",
     qr: "https://github.com/Poldyaich97/kontur_business_card/blob/main/src/data/qr2.png?raw=true",
     telegramUsername: "@jmilukova"
   }
