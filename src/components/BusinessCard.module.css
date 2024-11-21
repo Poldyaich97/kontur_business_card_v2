@@ -1,3 +1,14 @@
+.messengerButton {
+  @apply flex items-center gap-2 bg-green-600 text-white hover:bg-green-500;
+  @apply py-2 px-4 rounded-lg cursor-pointer;
+  @apply transition-colors duration-200;
+  margin-top: 10px;
+}
+
+.messengerButton:hover {
+  background-color: #34c759; /* Цвет для улучшенного UX */
+}
+
 .card {
   @apply bg-gradient-to-br from-gray-900 to-gray-800 p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl;
   @apply w-full max-w-3xl mx-auto;
