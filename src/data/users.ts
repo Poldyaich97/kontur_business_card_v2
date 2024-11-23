@@ -55,8 +55,8 @@ export const users: User[] = [
     position: "Директор департамента – заместитель генерального директора",
     phone: "+7 (912) 048-24-04",
     email: "sse@skbkontur.ru",
-    photo: "https://github.com/Poldyaich97/kontur_business_card_v2/blob/main/src/data/id4.jpg?raw=true",
-    qr: "https://raw.githubusercontent.com/Poldyaich97/kontur_business_card_v2/refs/heads/main/src/data/qr4.png?raw=true",
+    photo: "https://raw.githubusercontent.com/Poldyaich97/kontur_business_card_v2/refs/heads/main/src/data/id5.jpgb ?raw=true",
+    qr: "https://raw.githubusercontent.com/Poldyaich97/kontur_business_card_v2/refs/heads/main/src/data/QR5.png?raw=true",
     telegramUsername: "+79120482404"
   }
 
