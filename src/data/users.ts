@@ -33,7 +33,7 @@ export const users: User[] = [
   {
     id: 3,
     name: "Воробьев Дмитрий Александрович",
-    position: "Руководитель управления УИТ",
+    position: "Руководитель управления ИТ",
     phone: "+7 (965) 546-44-64",
     email: "vord@skbkontur.ru",
     photo: "https://github.com/Poldyaich97/kontur_business_card_v2/blob/main/src/data/id3.jpg?raw=true",
@@ -55,7 +55,7 @@ export const users: User[] = [
     position: "Директор департамента – заместитель генерального директора",
     phone: "+7 (912) 048-24-04",
     email: "sse@skbkontur.ru",
-    photo: "https://raw.githubusercontent.com/Poldyaich97/kontur_business_card_v2/refs/heads/main/src/data/id5.jpgb ?raw=true",
+    photo: "https://raw.githubusercontent.com/Poldyaich97/kontur_business_card_v2/refs/heads/main/src/data/id5.jpg?raw=true",
     qr: "https://raw.githubusercontent.com/Poldyaich97/kontur_business_card_v2/refs/heads/main/src/data/QR5.png?raw=true",
     telegramUsername: "+79120482404"
   }
