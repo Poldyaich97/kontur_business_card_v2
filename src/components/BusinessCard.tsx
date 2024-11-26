@@ -77,12 +77,16 @@ END:VCARD`;
 
             <div className={styles.infoItem}>
               <Phone size={20} className={styles.icon} />
-              <span>{user.phone}</span>
+              <a href={`tel:${user.phone}`} className={styles.link}>
+                {user.phone}
+              </a>
             </div>
 
             <div className={styles.infoItem}>
               <Mail size={20} className={styles.icon} />
-              <span>{user.email}</span>
+              <a href={`mailto:${user.email}`} className={styles.link}>
+                {user.email}
+              </a>
             </div>
           </div>
         </div>
