@@ -104,28 +104,25 @@ END:VCARD`;
           </button>
 
           {/* Кнопки для WhatsApp и Telegram */}
-          <button
-            onClick={() =>
-              window.open(
-                `https://wa.me/${user.phone.replace(/[^0-9]/g, "")}`,
-                "_blank"
-              )
-            }
-            className={`${styles.qrButton} ${styles.messengerButton}`}
+          <a
+            href={`https://wa.me/${user.phone.replace(/[^0-9]/g, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.qrButton} ${styles.messengerButton} flex items-center gap-2`}
           >
             <MessageCircle size={16} className={styles.icon} />
             Написать в WhatsApp
-          </button>
+          </a>
 
-          <button
-            onClick={() =>
-              window.open(`https://t.me/${user.telegramUsername}`, "_blank")
-            }
-            className={`${styles.qrButton} ${styles.messengerButton}`}
+          <a
+            href={`https://t.me/${user.telegramUsername}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.qrButton} ${styles.messengerButton} flex items-center gap-2`}
           >
             <MessageCircle size={16} className={styles.icon} />
             Написать в Telegram
-          </button>
+          </a>
         </div>
 
         {/* Используем уже готовый QR-код */}

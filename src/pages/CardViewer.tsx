@@ -1,8 +1,7 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { BusinessCard } from "../components/BusinessCard";
 import { users } from "../data/users";
-import { Shield } from "lucide-react";
 import styles from "../components/BusinessCard.module.css";
 
 export const CardViewer: React.FC = () => {
